@@ -17,17 +17,15 @@ app.get('/', (req, res) => {
 })
 
 app.post('/login', (req, res) => {
-  const username = 'jane'
-  const password = '1234'
+  const username = 'hasan'
+  const password = '123456'
 
   if (req.body.username != username) {
-    res.statusCode = 400
-    res.json({status: 'error, username not found'})
+    res.status(401).json({status: 'error, username not found'})
   }
 
   if (req.body.password != password) {
-    res.statusCode = 401
-    res.json({status: 'error, wrong password'})
+    res.status(401).json({status: 'error, wrong password'})
   }
 
   res.json({status: 'success'})
